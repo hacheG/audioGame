@@ -1,0 +1,246 @@
+<!-- "Casa Bossa Nova" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    index2
+    <script>
+
+const intro = new Audio('sonidos/intro.ogg');
+const intro2 = new Audio('sonidos/intro2.ogg');
+const opciones1 = new Audio('sonidos/opciones1.ogg');
+const opciones2 = new Audio('sonidos/opciones2.ogg');
+const opciones3 = new Audio('sonidos/opciones3.ogg');
+const opciones4 = new Audio('sonidos/opciones4.ogg');
+const opciones5 = new Audio('sonidos/opciones5.ogg');
+const dialogoOfni1 = new Audio('sonidos/dialogoOfni1.ogg');
+const diagAzucar1 = new Audio('sonidos/diagAzucar1.ogg');
+const diagAzucar2 = new Audio('sonidos/diagAzucar2.ogg');
+const diagAzucar3 = new Audio('sonidos/diagAzucar3.ogg');
+const diagHojas1 = new Audio('sonidos/diagHojas1.ogg');
+const diagHormiguero1 = new Audio('sonidos/diagHormiguero1.ogg');
+const diagHormiguero2 = new Audio('sonidos/diagHormiguero2.ogg');
+const diagCaminos1 = new Audio('sonidos/diagCaminos1.ogg');
+const diagCaminos2 = new Audio('sonidos/diagCaminos2.ogg');
+const diagCaminos3 = new Audio('sonidos/diagCaminos3.ogg');
+const diagAfidos1 = new Audio('sonidos/diagAfidos1.ogg');
+const diagAfidos2 = new Audio('sonidos/diagAfidos2.ogg');
+const diagAfidos3 = new Audio('sonidos/diagAfidos3.ogg');
+const diagAfidos4 = new Audio('sonidos/diagAfidos4.ogg');
+const diagGuardia1 = new Audio('sonidos/diagGuardia1.ogg');
+const diagCuidadorAfido1 = new Audio('sonidos/diagCuidadorAfido1.ogg');
+const diagCuidadorAfido2 = new Audio('sonidos/diagCuidadorAfido2.ogg');
+
+const casaBossaNova = new Audio('sonidos/Casa Bossa Nova.mp3'); // fuera del hormiguero
+const raw = new Audio('sonidos/Raw.mp3'); //en los tuneles del hormiguero
+const robobozo = new Audio('sonidos/Robobozo.mp3'); //zona de afidos
+
+document.addEventListener('keypress', startGame)
+
+window.onload = () => {
+    intro.play();
+    casaBossaNova.volume = 0.4
+    casaBossaNova.play()
+}
+
+let valOpcion = 0;
+let valRepetir = 0;
+let valdigit1 = 0;
+let valdigit2 = 0;
+let valdigit3 = 0;
+
+function startGame(){
+    if (event.code === 'KeyO' && valOpcion === 0){
+        opciones1.play();
+    console.log(diagCuidadorAfido1.duration);
+
+
+    } else if (event.code === 'KeyQ'){
+        console.log('quitar');
+        intro.currentTime = intro.duration
+        opciones1.currentTime =opciones1.duration
+        opciones2.currentTime =opciones2.duration
+        opciones3.currentTime =opciones3.duration
+        opciones4.currentTime =opciones4.duration
+        opciones5.currentTime =opciones5.duration
+        dialogoOfni1.currentTime =dialogoOfni1.duration
+        diagAzucar1.currentTime =diagAzucar1.duration
+        diagAzucar2.currentTime =diagAzucar2.duration
+        diagAzucar3.currentTime =diagAzucar3.duration
+        diagHojas1.currentTime =diagHojas1.duration
+        diagHormiguero1.currentTime =diagHormiguero1.duration
+        diagHormiguero2.currentTime =diagHormiguero2.duration
+        diagCaminos1.currentTime =diagCaminos1.duration
+        diagCaminos2.currentTime =diagCaminos2.duration
+        diagCaminos3.currentTime =diagCaminos3.duration
+        diagAfidos1.currentTime =diagAfidos1.duration
+        diagAfidos2.currentTime =diagAfidos2.duration
+        diagAfidos3.currentTime =diagAfidos3.duration
+        diagAfidos4.currentTime =diagAfidos4.duration
+        diagGuardia1.currentTime = diagGuardia1.duration
+        diagCuidadorAfido1.currentTime =diagCuidadorAfido1.duration
+        diagCuidadorAfido2.currentTime =diagCuidadorAfido2.duration
+
+    } else if (event.code === 'KeyR' && valRepetir === 0){
+        console.log('R');
+        intro.play();
+
+        
+    } else if (event.code === 'KeyI'){
+        console.log('I');
+        window.location="index.html";
+        //localStorage.setItem("insignias", JSON.stringify([1, 2]));
+
+    } else if (event.code === 'Digit1' && valdigit1 === 0){
+        valOpcion += 1;
+        valRepetir += 1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+        valdigit3 += 1;
+        dialogoOfni1.play();
+    
+    } else if (event.code === 'Digit2' && valdigit2 === 0) {
+        diagAzucar1.play();
+
+    } else if (event.code === 'Digit3' && valdigit3 === 0){
+        diagHojas1.play();
+//======================================================================
+    } else if (event.code === 'KeyO' && valOpcion === 1){
+        // valdigit2 += 1;
+        // valdigit3 += 1;
+        opciones2.play();
+
+    } else if (event.code === 'KeyR' && valRepetir === 1){
+        dialogoOfni1.play();
+
+    } else if (event.code === 'Digit1' && valdigit1 === 1){
+        valOpcion +=1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+        valdigit3 += 1;
+        diagAzucar2.play();
+
+    } else if (event.code === 'Digit2' && valdigit2 === 1){
+        diagHojas1.play();
+
+    } else if (event.code === 'Digit3' && valdigit3 === 1){
+        diagHormiguero1.play();
+//=============================================================
+    } else if (event.code === 'KeyO' && valOpcion === 2){
+        opciones2.play();
+    
+    } else if (event.code === 'KeyR' && valRepetir === 1){
+        diagAzucar2.play();
+
+    } else if (event.code === 'Digit1' && valdigit1 === 2){
+        diagAzucar3.play();
+
+    } else if (event.code === 'Digit2' && valdigit2 === 2){
+        diagHojas1.play();
+
+    } else if (event.code === 'Digit3' && valdigit3 === 2){
+        valOpcion += 1;
+        valRepetir += 1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+        valdigit3 += 1;
+        
+        casaBossaNova.currentTime =casaBossaNova.duration
+        raw.volume = 0.3
+        raw.play();
+        diagHormiguero2.play();
+        //entro al tunel del hormiguero
+        setTimeout(() => {
+            diagCaminos1.play();
+        }, 13000);
+//=================================================================
+    } else if (event.code === 'KeyO' && valOpcion === 3){
+        opciones3.play();
+    
+    } else if (event.code === 'KeyR' && valRepetir === 2){
+        diagHormiguero2.play();
+
+        setTimeout(() => {
+            diagCaminos1.play();
+        }, 13000);
+
+    } else if (event.code === 'Digit1' && valdigit1 === 3){
+        valOpcion += 1;
+        valRepetir += 1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+        valdigit3 += 1;
+        diagAfidos1.play();
+
+        setTimeout(() => {
+            diagGuardia1.play();
+        }, 12000)
+
+    } else if (event.code === 'Digit2' && valdigit2 === 3){
+        diagCaminos2.play();
+
+    } else if (event.code === 'Digit3' && valdigit2 === 3){
+        diagCaminos3.play();
+//===================================================================
+    } else if (event.code === 'KeyO' && valOpcion === 4){
+        opciones4.play();
+
+    } else if (event.code === 'KeyR' && valRepetir === 3){
+        diagAfidos1.play();
+
+        setTimeout(() => {
+            diagGuardia1.play();
+        }, 12000)
+
+    } else if (event.code === 'Digit1' && valdigit1 === 4){
+        valOpcion += 1;
+        valRepetir += 1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+        
+        raw.currentTime =raw.duration;
+        robobozo.volume = 0.3;
+        robobozo.play();
+        diagAfidos2.play();
+        //aqui entro a zona afidos
+    } else if (event.code === 'Digit2' && valdigit2 === 4){
+        diagAfidos3.play();
+//===================================================================
+    } else if (event.code === 'KeyO' && valOpcion === 5){
+        opciones5.play();
+
+    } else if (event.code === 'KeyR' && valRepetir === 4){
+        diagAfidos2.play();
+    
+    } else if (event.code === 'Digit1' && valdigit1 === 5){
+        diagAfidos4.play();
+
+    } else if (event.code === 'Digit2' && valdigit2 === 5){
+        valOpcion += 1;
+        valRepetir += 1;
+        valdigit1 += 1;
+        valdigit2 += 1;
+
+        diagCuidadorAfido1.play();
+
+        setTimeout(() => {
+            diagCuidadorAfido2.play();
+        }, 25569)
+//===================================================================
+    } else if (event.code === 'KeyO' && valOpcion === 5){
+        opciones5.play();
+
+    } 
+
+}
+
+    </script>
+</body>
+</html>

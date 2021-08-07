@@ -1,0 +1,62 @@
+<!-- "Thinking Music" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    index
+    <script>
+
+document.addEventListener('keypress', instructions);
+
+const instruicionesR_O = new Audio('sonidos/instruccionesR_O.ogg');
+const opcionesInit = new Audio('sonidos/opcionesInit.ogg')
+const cabecera = new Audio('sonidos/Thinking Music.mp3')
+let contBack = 0
+let newOp = 9
+
+function instructions(){
+    if (event.code === 'Backquote' && contBack === 0){
+        console.log(contBack);
+        //contBack +=1
+        cabecera.volume = 0.5
+        cabecera.play();
+        instruicionesR_O.play();
+
+    } else if (event.code === 'KeyR'){
+            console.log('R');
+            instruicionesR_O.play();
+            // console.log(localStorage.getItem("insignias"));
+            // let badges = localStorage.getItem("insignias");
+            // badges = JSON.parse(badges);
+            // console.log(badges[1]);
+            // badges.push(3);
+            // localStorage.setItem("insignias",JSON.stringify(badges));
+            
+        
+    } else if (event.code === 'KeyO'){
+            console.log('O');
+            opcionesInit.play();
+
+    } else if (event.code === 'KeyI'){
+        window.location="index2.html";
+
+    } else if (event.code === 'KeyQ'){
+        console.log('quitar');
+        instruicionesR_O.currentTime = instruicionesR_O.duration
+        opcionesInit.currentTime = opcionesInit.duration
+        cabecera.currentTime =cabecera.duration;
+
+    }
+}
+
+
+    </script>
+</body>
+</html>
